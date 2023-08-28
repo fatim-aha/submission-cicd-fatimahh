@@ -20,6 +20,6 @@ public class AppTest
     public void testAppMessage()
     {
         App app = new App();
-        assertEquals("This my submission CICD!", app.getMessage());
+        assertEquals("This is Fatimah Azzahra submission CICD!", app.getMessage());
     }
 }
