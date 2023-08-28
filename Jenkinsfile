@@ -23,10 +23,11 @@ pipeline {
         }
         stage('Manual Approval') {
             steps {
-                input {
-                    message "Lanjutkan ke tahap Deploy?"
-                    ok "Proceed"
+                timeout(time: 15, unit: "MINUTES") {
+                    input message: 'Lanjutkan ke tahap Deploy?', ok: 'Proceed'
                 }
+
+                echo "Initiating deployment"
             }
         }
 
