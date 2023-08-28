@@ -26,7 +26,6 @@ pipeline {
                 input {
                     message "Lanjutkan ke tahap Deploy?"
                     ok "Proceed"
-                    submitter "fatimah"
                 }
             }
         }
