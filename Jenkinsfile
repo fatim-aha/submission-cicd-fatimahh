@@ -22,19 +22,18 @@ pipeline {
             }
         }
         stage('Manual Approval') {
-            input {
-                message "Lanjutkan ke tahap Deploy?"
-                ok "Proceed"
-                submitter "fatimah"
-            }
             steps {
-                echo 'Procceed'
+                input {
+                    message "Lanjutkan ke tahap Deploy?"
+                    ok "Proceed"
+                    submitter "fatimah"
+                }
             }
         }
 
         stage('Deploy') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'java -jar target/submission-cicd-fatimah-1.0-SNAPSHOT.jar'
                 sleep time: 60, unit: 'SECONDS'
             }
         }
